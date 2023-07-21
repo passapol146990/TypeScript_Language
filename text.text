@@ -1,0 +1,77 @@
+tsc --init //สร้างไฟล์
+tsc //คอมพาย ts => js
+
+
+tsc -w //คอมพายอัตโนมัติ
+
+
+แปลง string => int
+parseInt("100").toString()
+
+if แบบลดรูป
+let sum = number%2==0?"เลขคู่":"เลขคคี่";
+
+switch case
+let number = 5000;
+let num =4;
+let result ="";
+switch (num) {
+    case 1:1;
+        result="ยอดคงเหลือ"+number;
+        break;
+    case 2:2;
+        result="ฝากเงิน";
+        break;
+    case 3:3;
+        result="ถอนเงิน";
+        break;
+    default:
+        result="ไม่มีบริการหมายเลขนี่";
+}
+console.log(result);
+
+สร้าง array
+let users:string[]=["phol","game","Opa"]
+users.forEach((people)=>{
+    console.log(people);
+})
+
+
+การเรียกใช้ตัวแปรใน function
+console.log(`Hi ${name}`);
+
+arrow function
+const num = (a:number,b:number):number=>{
+    return a+b;
+}
+
+
+สร้างฟังชันซ้ำกันแต่รับค่าไม่เหมือนกัน ฟังชันแบบโอเวอร์โหลด
+function sayHi()
+function sayHi(name:string):string
+function sayHi(name?:unknown):unknown{
+    if(name){
+        return `Hello TypeScript`
+    }
+    if(typeof name == "string"){
+        return `Hello ${name}`
+    }
+    throw new Error("ชนิดข้อมูลไม่ถูกต้อง")
+}
+สร้างชื่อฟังชันแล้วสุดท้าย ชนิดข้อมูลให้ใช้ unknown
+
+
+
+การ array
+const a = ["1","2"]
+const b = ["1","2","3","4"]
+b.push(...a)
+
+การรับค่าไม่จำกัด
+const total = (...numbers:number[])=>{
+    return numbers.reduce((result,value)={
+        return result + value
+    },0//ค่าเริ่มต้น)
+}
+
+ถ้าเป็น object ให้ใช้ {} แทน
